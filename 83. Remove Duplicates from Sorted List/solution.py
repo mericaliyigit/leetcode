@@ -20,12 +20,17 @@ class Solution:
         current = head
         pointer = head
         while current:
-            # will point to the next node
             pointer = current.next
+            # if node is not null and it has the same value as current
+            # increment our pointer futher
             while pointer and pointer.val == current.val:
                 pointer = pointer.next
+            # assign the next of our current to this position
+            # essentially chopping of in betweens
             current.next = pointer
+            # iterate
             current = current.next
+
         return start
 
 
